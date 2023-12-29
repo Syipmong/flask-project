@@ -8,5 +8,17 @@
 </head>
 <body>
     <h1>{{ greeting }}</h1>
+
+    <ul>
+        {% for user in users %}
+            <li>{{ user.username }}</li>
+        {% endfor %}
+    </ul>
+
+    <form method="post" action="{{ url_for('add_user') }}">
+        <label for="username">Add a user:</label>
+        <input type="text" id="username" name="username" required>
+        <button type="submit">Add User</button>
+    </form>
 </body>
 </html>
