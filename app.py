@@ -14,6 +14,10 @@ def home():
     users = User.query.all()
     return render_template('index.html', greeting='Hello, Flask!', users=users)
 
+@app.route('/test')
+def testss():
+    return render_template('test.html' )
+
 @app.route('/add_user', methods=['POST'])
 def add_user():
     username = request.form['username']
